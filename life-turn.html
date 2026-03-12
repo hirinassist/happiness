@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>人生大轉彎｜設計您的下半場人生</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  background: #faf8f5;
+  color: #1e1408;
+  overflow-x: hidden;
+  max-width: 480px;
+  margin: 0 auto;
+}
+img { display: block; max-width: 100%; height: auto; }
+
+:root {
+  --warm:      #c8622a;
+  --warm-mid:  #e07a3a;
+  --warm-lite: #fff3eb;
+  --sage:      #4a6741;
+  --sage-lite: #edf3ec;
+  --gold:      #b8921a;
+  --cream:     #faf8f5;
+  --text:      #1e1408;
+  --text-soft: #6b5040;
+}
+
+/* ── TOPBAR ── */
+.topbar {
+  background: var(--sage);
+  color: rgba(255,255,255,.88);
+  text-align: center;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  padding: 9px 16px;
+}
+
+/* ── HEADER ── */
+header {
+  background: linear-gradient(160deg, #3d2810 0%, #6b3c18 40%, var(--warm) 100%);
+  padding: 38px 24px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+header::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -60px;
+  width: 260px; height: 260px;
+  background: rgba(255,255,255,.04);
+  border-radius: 50%;
+}
+header::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: -50px;
+  width: 200px; height: 200px;
+  background: rgba(255,200,120,.07);
+  border-radius: 50%;
+}
+.header-badge {
+  display: inline-block;
+  background: rgba(255,255,255,.15);
+  color: rgba(255,255,255,.9);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  padding: 5px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,.25);
+  margin-bottom: 18px;
+  position: relative; z-index: 1;
+}
+.header-title {
+  font-family: 'Noto Serif TC', serif;
+  color: #fff;
+  font-size: 1.75rem;
+  font-weight: 900;
+  line-height: 1.4;
+  letter-spacing: .06em;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 16px rgba(0,0,0,.35);
+  position: relative; z-index: 1;
+}
+.header-title em {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: rgba(255,220,160,.9);
+  letter-spacing: .1em;
+  font-style: normal;
+  margin-top: 6px;
+}
+.header-sub {
+  color: rgba(255,255,255,.78);
+  font-size: .88rem;
+  line-height: 1.8;
+  margin-bottom: 28px;
+  position: relative; z-index: 1;
+}
+
+/* ── CTA ── */
+.cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  background: #fff;
+  color: var(--warm);
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: .06em;
+  padding: 15px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 22px rgba(0,0,0,.22);
+  transition: transform .18s;
+  cursor: pointer;
+  position: relative; z-index: 1;
+}
+.cta-btn.inv {
+  background: var(--warm);
+  color: #fff;
+  box-shadow: 0 4px 22px rgba(200,98,42,.45);
+}
+.cta-btn:active { transform: scale(.97); }
+.line-icon { width: 22px; height: 22px; flex-shrink: 0; }
+
+@keyframes pulse {
+  0%,100% { box-shadow: 0 4px 22px rgba(200,98,42,.4); }
+  50%      { box-shadow: 0 4px 36px rgba(200,98,42,.75); }
+}
+.cta-btn.pulse { animation: pulse 2s ease-in-out infinite; }
+
+/* ── DIVIDER ── */
+.divider {
+  height: 4px;
+  background: linear-gradient(90deg, var(--sage-lite), var(--sage), var(--warm), var(--sage-lite));
+  border: none;
+}
+
+/* ── AD IMAGE ── */
+.ad-wrap { width: 100%; background: var(--warm-lite); line-height: 0; }
+.ad-wrap img { width: 100%; height: auto; }
+
+/* ── SECTION ── */
+section { padding: 38px 20px; }
+.sec-title {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 6px;
+  letter-spacing: .04em;
+  line-height: 1.5;
+}
+.sec-title em { color: var(--warm); font-style: normal; }
+.sec-sub {
+  font-size: .84rem;
+  color: var(--text-soft);
+  text-align: center;
+  margin-bottom: 24px;
+  line-height: 1.7;
+}
+
+/* ── PILLARS ── */
+.pillars { background: var(--cream); }
+.pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.p-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 22px 14px 18px;
+  text-align: center;
+  border: 1.5px solid rgba(200,98,42,.1);
+  box-shadow: 0 2px 10px rgba(0,0,0,.05);
+}
+.p-icon { font-size: 1.9rem; display: block; margin-bottom: 10px; }
+.p-name { font-size: .88rem; font-weight: 900; color: var(--warm); display: block; margin-bottom: 4px; letter-spacing: .04em; }
+.p-desc { font-size: .78rem; color: var(--text-soft); line-height: 1.6; }
+
+/* ── TURNING POINT ── */
+.turning {
+  background: linear-gradient(155deg, #3d2810 0%, #6b3c18 50%, var(--warm) 100%);
+  color: #fff;
+}
+.turning .sec-title { color: #fff; font-family: 'Noto Serif TC', serif; }
+.turning .sec-sub   { color: rgba(255,220,170,.75); }
+.t-list { list-style: none; }
+.t-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(255,255,255,.13);
+  font-size: .93rem;
+  font-weight: 500;
+  line-height: 1.65;
+}
+.t-list li:last-child { border-bottom: none; }
+.dot {
+  width: 22px; height: 22px; min-width: 22px;
+  background: rgba(255,255,255,.2);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .7rem; font-weight: 900;
+  margin-top: 2px; flex-shrink: 0;
+}
+
+/* ── STEPS ── */
+.steps { background: var(--sage-lite); }
+.steps-col { display: flex; flex-direction: column; }
+.step-row { display: flex; align-items: center; gap: 14px; }
+.step-num {
+  width: 42px; height: 42px; min-width: 42px;
+  background: linear-gradient(135deg, var(--sage), #2e4a28);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 1.1rem; font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 3px 10px rgba(74,103,65,.3);
+}
+.step-title { font-size: .93rem; font-weight: 700; color: var(--text); }
+.step-hint  { font-size: .77rem; color: var(--text-soft); margin-top: 2px; }
+.step-line  {
+  width: 2px; height: 20px;
+  background: linear-gradient(to bottom, var(--sage), rgba(74,103,65,.1));
+  margin-left: 20px;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: #1e1408;
+  padding: 38px 20px 50px;
+  text-align: center;
+}
+.f-title {
+  font-family: 'Noto Serif TC', serif;
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: .06em;
+  line-height: 1.5;
+}
+.f-sub {
+  color: rgba(255,220,170,.6);
+  font-size: .84rem;
+  line-height: 1.75;
+  margin-bottom: 26px;
+}
+.footer-note {
+  font-size: .7rem;
+  color: rgba(255,255,255,.18);
+  margin-top: 22px;
+  letter-spacing: .05em;
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">✨ 下半場人生，現在重新啟動</div>
+
+<!-- ════ HEADER ════ -->
+<header>
+  <span class="header-badge">職涯轉型・專業陪伴</span>
+  <h1 class="header-title">
+    人生大轉彎
+    <em>設計您的下半場人生</em>
+  </h1>
+  <p class="header-sub">不論過去做什麼<br>現在都可以重新選擇</p>
+  <a href="https://line.me/ti/p/63B7B5ZWeX" target="_blank" class="cta-btn pulse">
+    <svg class="line-icon" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="6" fill="#06C755"/><path d="M20 10.8C20 7.1 16.4 4 12 4S4 7.1 4 10.8c0 3.3 2.9 6.1 6.9 6.6.3.1.7.2.8.5.1.3 0 .6-.1.9l-.1.8c0 .2-.2.9.8.5 1-.4 5.4-3.2 7.4-5.5.9-1 1.3-2.1 1.3-3.3z" fill="#fff"/></svg>
+    立即加入 LINE 諮詢
+  </a>
+</header>
+
+<hr class="divider">
+
+<!-- ════ AD IMAGE ════ -->
+<div class="ad-wrap">
+  <img src="https://i.ibb.co/fYh0Dm1b/photo-2026-03-12-17-36-50.jpg" alt="人生大轉彎 下半場人生規劃">
+</div>
+
+<hr class="divider">
+
+<!-- ════ PILLARS ════ -->
+<section class="pillars">
+  <h2 class="sec-title">我們提供<em>四大支持</em></h2>
+  <p class="sec-sub">陪您走過每一個轉折，找到真正適合的位置</p>
+  <div class="pillars-grid">
+    <div class="p-card">
+      <span class="p-icon">🧭</span>
+      <span class="p-name">職涯定向</span>
+      <span class="p-desc">釐清方向<br>找到新定位</span>
+    </div>
+    <div class="p-card">
+      <span class="p-icon">🤝</span>
+      <span class="p-name">精準媒合</span>
+      <span class="p-desc">依經歷配對<br>不走冤枉路</span>
+    </div>
+    <div class="p-card">
+      <span class="p-icon">⏰</span>
+      <span class="p-name">彈性就業</span>
+      <span class="p-desc">多種工時<br>配合您的生活</span>
+    </div>
+    <div class="p-card">
+      <span class="p-icon">🌱</span>
+      <span class="p-name">持續成長</span>
+      <span class="p-desc">全程陪伴<br>穩定就業為止</span>
+    </div>
+  </div>
+</section>
+
+<!-- ════ WHO ════ -->
+<section class="turning">
+  <h2 class="sec-title">這個計畫適合你嗎？</h2>
+  <p class="sec-sub">只要有心重新出發，就是最好的時機</p>
+  <ul class="t-list">
+    <li><span class="dot">✓</span>感覺職涯卡關，想找到新方向</li>
+    <li><span class="dot">✓</span>曾因家庭暫離職場，準備重返</li>
+    <li><span class="dot">✓</span>想嘗試不同產業，開啟第二職涯</li>
+    <li><span class="dot">✓</span>需要兼顧生活，尋求彈性工作</li>
+  </ul>
+</section>
+
+<!-- ════ STEPS ════ -->
+<section class="steps">
+  <h2 class="sec-title">轉彎<em>四步驟</em></h2>
+  <p class="sec-sub">三分鐘諮詢，開啟人生新篇章</p>
+  <div class="steps-col">
+    <div class="step-row">
+      <div class="step-num">1</div>
+      <div>
+        <div class="step-title">加入 LINE，與顧問對話</div>
+        <div class="step-hint">免費諮詢，無任何壓力</div>
+      </div>
+    </div>
+    <div class="step-line"></div>
+    <div class="step-row">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-title">分享您的經歷與期望</div>
+        <div class="step-hint">薪資、工時、產業方向</div>
+      </div>
+    </div>
+    <div class="step-line"></div>
+    <div class="step-row">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-title">獲得專屬職缺推薦</div>
+        <div class="step-hint">為您量身配對最佳選擇</div>
+      </div>
+    </div>
+    <div class="step-line"></div>
+    <div class="step-row">
+      <div class="step-num">4</div>
+      <div>
+        <div class="step-title">面試上工，人生轉彎</div>
+        <div class="step-hint">全程陪伴至穩定就業</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FOOTER ════ -->
+<footer>
+  <p class="f-title">下半場人生<br>從這一步開始</p>
+  <p class="f-sub">免費諮詢・專業媒合<br>無論幾歲，現在都不晚</p>
+  <a href="https://line.me/ti/p/63B7B5ZWeX" target="_blank" class="cta-btn inv pulse">
+    <svg class="line-icon" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="6" fill="rgba(255,255,255,.2)"/><path d="M20 10.8C20 7.1 16.4 4 12 4S4 7.1 4 10.8c0 3.3 2.9 6.1 6.9 6.6.3.1.7.2.8.5.1.3 0 .6-.1.9l-.1.8c0 .2-.2.9.8.5 1-.4 5.4-3.2 7.4-5.5.9-1 1.3-2.1 1.3-3.3z" fill="#fff"/></svg>
+    立即加入 LINE 諮詢
+  </a>
+  <p class="footer-note">© 人生大轉彎｜下半場職涯設計</p>
+</footer>
+
+</body>
+</html>
